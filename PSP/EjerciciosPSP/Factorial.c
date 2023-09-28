@@ -4,6 +4,7 @@ int main (void){
     int numero;
     int resultado = 1;
 
+    numero = -1;
     printf("Calcular factorial.\n");
     printf("Introduce un numero: (no puede ser negativo)\n");
     scanf("%d",&numero);
