@@ -4,8 +4,8 @@
 
 int main (int argc, char *argv[]){
 
-    if(argc < 3){
-        printf("El numero de argumentos que has pasado es menor que tres. Tienes que ingresa el parametro operacion, y dos numeros.");
+    if(argc < 4){
+        printf("El numero de argumentos que has pasado es menor que tres. Tienes que ingresar el parametro operacion, y dos numeros.");
     }else{
         const char *operacion = argv[1];
         const char *num1_str = argv[2];
