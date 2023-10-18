@@ -5,11 +5,10 @@
 #include <stdlib.h>
 
 int main(void) {
-    pid_t idHijo;
     int status;
-    int suma = 1;
 
     for(int i = 1; i <= 10; i++){
+        pid_t idHijo;
         idHijo = fork();
 
         if(idHijo == 0){
