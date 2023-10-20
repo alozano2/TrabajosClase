@@ -2,12 +2,16 @@
 #include <string.h>
 #include <openssl/evp.h>
 #include <ctype.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
-#define A_MAYUS 65//esto es A mayuscula empezamos ahi
-#define Z_MINUS 122//esto es z minuscula terminamos ahi
+#define A_MAYUS 65 //A mayúscula en ASCII
+#define Z_MINUS 122 //z minúscula en ASCII
 #define MD5_LEN 16
 #define NUM_HASHES 2
 #define MD5_LENGTH 33
+#define id_hijo 0
 
 void generateMD5(const char *string, unsigned char *str_result) {
     EVP_MD_CTX *ctx;
@@ -41,14 +45,19 @@ int main (void) {
     char letra1, letra2, letra3, letra4, letra5;
     clock_t start, end;
     double cpu_time_used;
-    pid_t fork1;
-    fork1 = fork();
-    
+
+    //Variables referente a los fork
+    //pid_t fork1 = fork();
+    int status;
+
+    //Variables para el reloj
     start = clock();
+
+    //Lógica
     for(letra1 = A_MAYUS; letra1 <= Z_MINUS; letra1++){
         arrayChar[0] = letra1;
         for(letra2 = A_MAYUS; letra2 <= Z_MINUS; letra2++){
-            arrayChar[1] = letra2;
+             arrayChar[1] = letra2;
             for(letra3 = A_MAYUS; letra3 <= Z_MINUS; letra3++){
                 arrayChar[2] = letra3;
                 for(letra4 = A_MAYUS; letra4 <= Z_MINUS; letra4++){
@@ -66,6 +75,9 @@ int main (void) {
             }
         }
     }
+
+    /*wait(&status);
+    printf("El proceso hijo ha terminado\n.");*/
 
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
