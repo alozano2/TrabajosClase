@@ -8,6 +8,7 @@
 
 #define A_MAYUS 65 //A mayúscula en ASCII
 #define Z_MINUS 122 //z minúscula en ASCII
+#define FIN_TRABAJO_HIJO 95 //letra donde el trabajo hijo terminará
 #define MD5_LEN 16
 #define NUM_HASHES 2
 #define MD5_LENGTH 33
@@ -46,9 +47,6 @@ int main (void) {
     clock_t start, end;
     double cpu_time_used;
 
-    //Variables referente a los fork
-    //pid_t fork1 = fork();
-    int status;
 
     //Variables para el reloj
     start = clock();
@@ -75,10 +73,7 @@ int main (void) {
             }
         }
     }
-
-    /*wait(&status);
-    printf("El proceso hijo ha terminado\n.");*/
-
+    
     end = clock();
     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
     printf("Ha tardado %f segundos.\n",cpu_time_used);
