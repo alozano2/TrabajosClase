@@ -9,7 +9,6 @@
 
 #define A_MAYUS 65
 #define Z_MINUS 122
-#define FIN_TRABAJO_HIJO 95
 #define MD5_LEN 16
 #define NUM_HASHES 2
 #define MD5_LENGTH 33
@@ -55,15 +54,15 @@ int main(void) {
         return 1;
     } else if (pid == 0) {
         // Proceso hijo: comprobar la mitad superior de las letras
-        for (letra1 = A_MAYUS; letra1 <= Z_MINUS / 2; letra1++) {
+        for (letra1 = A_MAYUS; letra1 <= 'N'; letra1++) {
             arrayChar[0] = letra1;
-            for (letra2 = A_MAYUS; letra2 <= Z_MINUS / 2; letra2++) {
+            for (letra2 = A_MAYUS; letra2 <= Z_MINUS; letra2++) {
                 arrayChar[1] = letra2;
-                for (letra3 = A_MAYUS; letra3 <= Z_MINUS / 2; letra3++) {
+                for (letra3 = A_MAYUS; letra3 <= Z_MINUS; letra3++) {
                     arrayChar[2] = letra3;
-                    for (letra4 = A_MAYUS; letra4 <= Z_MINUS / 2; letra4++) {
+                    for (letra4 = A_MAYUS; letra4 <= Z_MINUS; letra4++) {
                         arrayChar[3] = letra4;
-                        for (letra5 = A_MAYUS; letra5 <= Z_MINUS / 2; letra5++) {
+                        for (letra5 = A_MAYUS; letra5 <= Z_MINUS; letra5++) {
                             arrayChar[4] = letra5;
                             generateMD5(arrayChar, result);
                             for (int j = 0; j < NUM_HASHES; j++) {
@@ -79,15 +78,15 @@ int main(void) {
         exit(0);
     } else {
         // Proceso padre: comprobar la mitad inferior de las letras
-        for (letra1 = Z_MINUS / 2 + 1; letra1 <= Z_MINUS; letra1++) {
+        for (letra1 = 'N' + 1; letra1 <= Z_MINUS; letra1++) {
             arrayChar[0] = letra1;
-            for (letra2 = Z_MINUS / 2 + 1; letra2 <= Z_MINUS; letra2++) {
+            for (letra2 = A_MAYUS; letra2 <= Z_MINUS; letra2++) {
                 arrayChar[1] = letra2;
-                for (letra3 = Z_MINUS / 2 + 1; letra3 <= Z_MINUS; letra3++) {
+                for (letra3 = A_MAYUS; letra3 <= Z_MINUS; letra3++) {
                     arrayChar[2] = letra3;
-                    for (letra4 = Z_MINUS / 2 + 1; letra4 <= Z_MINUS; letra4++) {
+                    for (letra4 = A_MAYUS; letra4 <= Z_MINUS; letra4++) {
                         arrayChar[3] = letra4;
-                        for (letra5 = Z_MINUS / 2 + 1; letra5 <= Z_MINUS; letra5++) {
+                        for (letra5 = A_MAYUS; letra5 <= Z_MINUS; letra5++) {
                             arrayChar[4] = letra5;
                             generateMD5(arrayChar, result);
                             for (int j = 0; j < NUM_HASHES; j++) {
@@ -109,3 +108,4 @@ int main(void) {
 
     return 0;
 }
+

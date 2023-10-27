@@ -52,15 +52,15 @@ int main (void) {
     start = clock();
 
     //Lógica
-    for(letra1 = A_MAYUS; letra1 <= Z_MINUS; letra1++){
+    for(letra1 = A_MAYUS; letra1 <= FIN_TRABAJO_HIJO; letra1++){
         arrayChar[0] = letra1;
-        for(letra2 = A_MAYUS; letra2 <= Z_MINUS; letra2++){
+        for(letra2 = A_MAYUS; letra2 <= FIN_TRABAJO_HIJO; letra2++){
              arrayChar[1] = letra2;
-            for(letra3 = A_MAYUS; letra3 <= Z_MINUS; letra3++){
+            for(letra3 = A_MAYUS; letra3 <= FIN_TRABAJO_HIJO; letra3++){
                 arrayChar[2] = letra3;
-                for(letra4 = A_MAYUS; letra4 <= Z_MINUS; letra4++){
+                for(letra4 = A_MAYUS; letra4 <= FIN_TRABAJO_HIJO; letra4++){
                     arrayChar[3] = letra4;
-                    for(letra5 = A_MAYUS; letra5 <= Z_MINUS; letra5++){
+                    for(letra5 = A_MAYUS; letra5 <= FIN_TRABAJO_HIJO; letra5++){
                         arrayChar[4] = letra5;
                         generateMD5(arrayChar, result);
                         for(int j = 0; j <= NUM_HASHES; j++){

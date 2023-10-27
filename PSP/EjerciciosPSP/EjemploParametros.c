@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
     printf("Nombre del programa: %s\n", argv[0]);
 
     // Verificar si se proporcionaron argumentos adicionales
-    if (argc > 1) {
+    if (argv > 1) {
         printf("Argumentos adicionales:\n");
         // Recorrer los argumentos adicionales y mostrarlos
         for (int i = 1; i < argc; i++) {
