@@ -11,17 +11,20 @@ public class shutdown{
 
         String [] commandsApagar = {
             "shutdown",
-            "-s"
+            "-s",
+            "now"
         };
 
         String [] commandsReiniciar = {
             "shutdown",
-            "-r"
+            "-r",
+            "now"
         };
 
         String [] commandsHibernar = {
             "shutdown",
-            "-h"
+            "-h",
+            "now"
         };
 
         System.out.println("Elige una opcion: \n1. Apagar.\n2.Reiniciar.\n3.Hibernar");
