@@ -22,7 +22,6 @@ public class Compresor {
         for(int i = 0; i < args.length; i++){
             ProcessBuilder compresor = new ProcessBuilder(commands);
             Process p = compresor.start();
-            
         }
     }
 }
