@@ -1,4 +1,4 @@
-package MemoriaCompartida;
+package EjercicioCorredores;
 
 public class Corredor implements Runnable{
     public static final long TIEMPO_DESCANSO = 500;

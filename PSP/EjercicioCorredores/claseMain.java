@@ -1,4 +1,4 @@
-package MemoriaCompartida;
+package EjercicioCorredores;
 
 import java.util.ArrayList;
 
