@@ -1,5 +1,0 @@
-El hijo los muestra:
-1.- 46
-2: 56
-3: 99
-El hijo ha terminado.
