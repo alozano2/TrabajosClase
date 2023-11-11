@@ -11,7 +11,7 @@ public class claseMain {
         ArrayList<Thread> listaHilos = new ArrayList<>();
 
         for(int i = 0; i <= TOTAL_CARREDORES; i++){
-            listaCorredores.add(new Corredor(TOTAL_CARRERA, i));
+            listaCorredores.add(new Corredor(TOTAL_CARRERA, i + 1));
             listaHilos.add(new Thread(listaCorredores.get(i)));
         }
 
@@ -30,6 +30,7 @@ public class claseMain {
                 e.printStackTrace();
             }
         }
+        
 
         System.out.println("La carrera ha terminado.");
     }
