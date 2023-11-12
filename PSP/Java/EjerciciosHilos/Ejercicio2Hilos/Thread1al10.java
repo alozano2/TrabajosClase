@@ -32,8 +32,8 @@ public class Thread1al10 implements Runnable {
         }
         
         for(int i = 1; i < NUMERO_MAXIMO; i++){
+            System.out.println("Soy el hilo " + thread.get(i - 1).getName() + " Empiezo a trabajar.");
             thread.get(i - 1).start();
-            System.out.println(thread.get(i - 1).getName());
         }
 
         for(int i = 1; i < NUMERO_MAXIMO; i++){

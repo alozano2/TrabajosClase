@@ -1,3 +1,5 @@
+package EjerciciosHilos;
+
 public class PrincipalThread {
     public static void main(String[] args) {
         HolaThread ta = new HolaThread("Alice", 7);

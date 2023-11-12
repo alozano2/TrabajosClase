@@ -1,5 +1,6 @@
+package EjerciciosHilos;
+
 public class EjemploThread implements Runnable {
-    
 
     public void run() {
         System.out.println("¡Como molan los threads joderrrrrr!");
