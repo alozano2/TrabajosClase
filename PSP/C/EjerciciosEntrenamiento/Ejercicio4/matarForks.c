@@ -2,11 +2,14 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <signal.h>
+#include <stdlib.h>
 
 #define NUMERO_PARAMETROS 2
+#define MAX_PROCESOS 100
 
 void killSignal (int signal){
-    printf("Proceso eliminado.");
+    printf("Proceso %d eliminado.\n", getpid());
+    exit(0);
 }
 
 int main (int argc, char *argv[]){
@@ -17,13 +20,14 @@ int main (int argc, char *argv[]){
     }
 
     int numero = atoi(argv[1]);
-    pid_t hijo;
+    pid_t hijo[MAX_PROCESOS];
 
     for(int i = 0; i < numero; i++){
-        hijo = fork();
+        hijo[i] = fork();
 
-        if(hijo == 0){
+        if(hijo[i] == 0){
             printf("Hijo %d creado correctamente: %d\n",i + 1, getpid());
+            signal(SIGUSR1, killSignal);
             while (1) {
                 sleep(1); // El proceso hijo espera y no hace nada
             }
@@ -31,11 +35,12 @@ int main (int argc, char *argv[]){
     }
 
     if(hijo > 0){
+
         for(int i = 0; i < numero; i++){
-            signal(killSignal,SIGUSR1);
+            kill(hijo[i], SIGUSR1);
         }
 
-        for (int i = 0; i < numero; i++) {
+        for (int i = 0; i <= numero; i++) {
             wait(NULL);
         }
     }

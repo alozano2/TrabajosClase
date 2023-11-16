@@ -50,6 +50,11 @@ public class Thread1al10 implements Runnable {
         todas las tablas.
         Habria que:
         -Utilizar redirecciones Linux: java EjerciciosHilos.Ejercicio2Hilos.ModifArray > salida.txt
-        -Utilizar sort: sort salida.txt
+        -Utilizar sort: cat salida.txt | sort
         Y así, una vez compilado el punto Java, conseguimos sacarlo a un fichero. */
+
+
+    /*Para solucionar el error de que no me encuentra el main, hay que situarse en la carpeta raiz, 
+     * en este caso en 'JAVA'.
+    */
 }
