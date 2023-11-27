@@ -36,6 +36,9 @@ public class Thread1al10 implements Runnable {
             thread.get(i - 1).start();
         }
 
+        /*Nunca se puede hacer en el mismo for un start() y un join() porque entonces el programa no
+         * es concurrente.
+         */
         for(int i = 1; i < NUMERO_MAXIMO; i++){
             try{
                 thread.get(i - 1).join();

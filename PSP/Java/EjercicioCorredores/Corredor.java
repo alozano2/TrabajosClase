@@ -31,5 +31,4 @@ public class Corredor implements Runnable{
         System.out.println(String.format("Soy el dorsal %d TERMINÉ", dorsal));
     }
 
-    
 }

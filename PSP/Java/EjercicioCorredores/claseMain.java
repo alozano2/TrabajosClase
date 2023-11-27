@@ -4,11 +4,15 @@ import java.util.ArrayList;
 
 public class claseMain {
     public static int TOTAL_CARRERA = 100;
-    public static int TOTAL_CARREDORES = 3;
+    public static int TOTAL_CARREDORES = 5;
 
     public static void main(String[] args) {
         ArrayList<Corredor> listaCorredores = new ArrayList<>();
         ArrayList<Thread> listaHilos = new ArrayList<>();
+
+        /*Object salida = new Object();
+        synchronized(salida){
+        }*/
 
         for(int i = 0; i <= TOTAL_CARREDORES; i++){
             listaCorredores.add(new Corredor(TOTAL_CARRERA, i + 1));
@@ -17,7 +21,7 @@ public class claseMain {
 
         System.out.println("La carrera va a comenzar");
 
-        for(int i = 0; i <= listaCorredores.size(); i++){
+        for(int i = 0; i < listaCorredores.size(); i++){
             listaHilos.get(i).start();
         }
 
