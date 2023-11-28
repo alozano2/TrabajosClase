@@ -1,8 +1,8 @@
 /*ESTE ES EL CODIGO DEL EJERCICIO QUE PIDE: Crea una clase Counter con un método sincronizado 
 increment que incremente una variable count. Crea dos hilos que incrementen el contador y 
-observa el resultado. 
+observa el resultado. */
 
-public class Contador implements Runnable {
+/*public class Contador implements Runnable {
     private int c = 0;
 
     public Contador (int c) {
