@@ -1,6 +1,4 @@
-package EjercicioCorredores;
-
-public class Corredor implements Runnable{
+public class Corredor implements Runnable {
     private static final long TIEMPO_DESCANSO = 500;
     private static final double MAX_INTERVALO_KM = 10;
     int kmRecorrido;
@@ -42,25 +40,3 @@ public class Corredor implements Runnable{
 
     }
 }
-
-/*1. Atributos:
-
-TIEMPO_DESCANSO: Constante que define el tiempo máximo de descanso.
-MAX_INTERVALO_KM: Constante que define la distancia máxima que puede recorrer el corredor en un intervalo.
-kmRecorrido: La distancia recorrida por el corredor.
-kmTotales: La distancia total que el corredor debe recorrer.
-dorsal: Número de identificación del corredor.
-salida: Objeto utilizado para la sincronización entre corredores.
-
-2. Constructor:
-Inicializa los atributos kmTotales, dorsal, kmRecorrido, y salida.
-
-3. Método run():
-Utiliza sincronización con el objeto salida para esperar la señal de inicio de carrera.
-Cuando se recibe la señal, el corredor muestra un mensaje de inicio de carrera.
-En un bucle, simula el descanso aleatorio y muestra el progreso del corredor.
-Calcula la distancia recorrida y la muestra.
-Cuando el corredor alcanza la distancia total, muestra un mensaje de finalización.
-*/
-
-//gcc -o tal cual -lssl -lcrypto
