@@ -75,7 +75,7 @@ int main(void) {
                 }
             }
         }
-        exit(0);
+        
     } else {
         // Proceso padre: comprobar la mitad inferior de las letras
         for (letra1 = 'N' + 1; letra1 <= Z_MINUS; letra1++) {
